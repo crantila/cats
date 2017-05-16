@@ -1,0 +1,78 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+body {
+    --primary-color: var(--oc-teal-5);
+
+    background-color: var(--oc-gray-0);
+    color: var(--oc-gray-8);
+    font-family: BlinkMacSystemFont, -apple-system, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+html {
+    height: 100%;
+}
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+a:hover, a:focus {
+    text-decoration: underline;
+    outline: none;
+}
+
+
+/* header bar */
+body > header {
+    background-color: var(--primary-color);
+    background-image: radial-gradient(ellipse farthest-corner at 75vw 0px, var(--oc-teal-4) 20%, var(--oc-teal-5) 40%, var(--oc-teal-6) 60%);
+    height: 10vh;
+}
+body > header > h1 {
+    font-size: 8vh;
+    margin: 0 0 0 10vw;
+    padding: 0;
+}
+
+
+/* footer bar */
+body > footer {
+    --footer-height: 10vh;
+
+    background-color: var(--oc-gray-2);
+    height: 10vh;
+}
+
+
+/* main content area */
+main {
+    flex-grow: 1;
+}
+
+
+/* at the bottom of the app */
+.horizontal-menu {
+    height: 100%;
+    width: 100%;
+}
+.horizontal-menu > ul {
+    height: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.horizontal-menu .divider {
+    background-color: var(--oc-gray-4);
+    height: 6vw;
+    width: 2px;
+}

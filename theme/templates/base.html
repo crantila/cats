@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    {# Set rendering engine for 360 Browser #}
+    <meta name="renderer" content="webkit">
+    {# Avoid extra ads from Baidu #}
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    {# Somehow enables "responsive" stuff #}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{{ main_siteurl }}/static/css/opencolor.css">
+    <link rel="stylesheet" href="{{ main_siteurl }}/static/css/main.css">
+
+    {% block css_extra %}{% endblock css_extra %}
+    {% block head %}{% endblock head %}
+
+    {% block header_meta %}
+    {% block canonical_link %}
+        <link rel="canonical" href="{{ SITEURL }}/">
+    {% endblock %}
+    {% block author_name %}
+        <meta name="author" content="{{ AUTHOR }}">
+    {% endblock %}
+    {% endblock header_meta %}
+
+    {% include "includes/favicons.html" %}
+</head>
+
+<body>
+    {% include 'includes/base_header.html' %}
+
+    <main>{% block content %}{% endblock %}</main>
+
+    {% include 'includes/base_footer.html' %}
+
+    {% block javascript %}{% endblock %}
+</body>
+</html>

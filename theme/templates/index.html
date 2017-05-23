@@ -15,6 +15,7 @@
             </header>
             <div class="am-panel-bd">
                 <picture>
+                    {% if IMAGE_WIDTHS is defined %}
                     <source
                         srcset="
                             {% for width in IMAGE_WIDTHS %}
@@ -29,6 +30,7 @@
                             {% endfor %}"
                         type="image/jpeg"
                     >
+                    {% endif %}
                     <img alt="A cutesaurus cat!" src="{{ SITEURL }}/images/{{ article.photo }}">
                 </picture>
                 <p>{{ article.summary|striptags|escape }}</p>
@@ -42,7 +44,7 @@
 
 {% block previous_link %}
 {%- if articles_previous_page.number is defined -%}
-{{ SITEURL }}/{{ page_name }}{{ articles_previous_page.number }}.html
+{{ SITEURL }}/{{ articles_previous_page.url }}
 {%- else -%}
 #
 {%- endif -%}
@@ -50,7 +52,7 @@
 
 {% block next_link %}
 {%- if articles_next_page.number is defined -%}
-{{ SITEURL }}/{{ page_name }}{{ articles_next_page.number }}.html
+{{ SITEURL }}/{{ articles_next_page.url }}
 {%- else -%}
 #
 {%- endif -%}

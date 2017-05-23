@@ -13,6 +13,15 @@ DEFAULT_PAGINATION = 10
 SLUGIFY_SOURCE = 'basename'
 
 
+# Pagination Settings
+# ===================
+DEFAULT_ORPHANS = 3
+PAGINATION_PATTERNS = (
+    (1, '{base_name}/', '{base_name}/index.html'),
+    (2, '{base_name}/page/{number}/', '{base_name}/page/{number}/index.html'),
+)
+
+
 # Disable the feeds
 # =================
 FEED_ALL_ATOM = None
@@ -25,10 +34,12 @@ AUTHOR_FEED_RSS = None
 # Change the URLs
 # ===============
 ARCHIVES_SAVE_AS = ''
-ARTICLE_URL = '{date:%Y}/{date:%m}/{date:%d}/{date:%H}:{date:%M}'
-ARTICLE_SAVE_AS = '{url_root}/index.html'.format(url_root=ARTICLE_URL)
-AUTHORS_SAVE_AS = ''
-CATEGORIES_SAVE_AS = ''
+ARTICLE_URL = ''
+ARTICLE_SAVE_AS = ''
+# ARTICLE_URL = '{date:%Y}/{date:%m}/{date:%d}/{date:%H}:{date:%M}'
+# ARTICLE_SAVE_AS = '{url_root}/index.html'.format(url_root=ARTICLE_URL)
+AUTHOR_SAVE_AS = ''
+CATEGORY_SAVE_AS = ''
 TAGS_SAVE_AS = ''
 PAGE_SAVE_AS = ''
 
@@ -45,4 +56,4 @@ TYPOGRIFY = True
 # =======================
 THEME = 'theme'
 DIRECT_TEMPLATES = ['compress_images', 'index']
-IMAGE_WIDTHS = ['300', '400', '500', '600', '700', '800', '900', '1000']
+# IMAGE_WIDTHS... only defined in publishconf

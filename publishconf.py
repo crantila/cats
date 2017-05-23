@@ -13,3 +13,8 @@ from pelicanconf import *
 SITEURL = 'https://meow.antila.ca'
 RELATIVE_URLS = False
 DELETE_OUTPUT_DIRECTORY = True
+
+
+# Theme (Custom Settings)
+# =======================
+IMAGE_WIDTHS = ['300', '400', '500', '600', '700', '800', '900', '1000']

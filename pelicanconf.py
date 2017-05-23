@@ -10,6 +10,8 @@ PATH = 'content'
 TIMEZONE = 'America/Toronto'
 DEFAULT_LANG = 'en'
 DEFAULT_PAGINATION = 10
+SLUGIFY_SOURCE = 'basename'
+
 
 # Disable the feeds
 # =================
@@ -18,7 +20,6 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
-
 
 
 # Change the URLs
@@ -43,3 +44,5 @@ TYPOGRIFY = True
 # Theme (Custom Settings)
 # =======================
 THEME = 'theme'
+DIRECT_TEMPLATES = ['compress_images', 'index']
+IMAGE_WIDTHS = ['300', '400', '500', '600', '700', '800', '900', '1000']

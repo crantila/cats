@@ -1,0 +1,3 @@
+- fix index2.html and so on
+- do the PWA things
+- use IMAGE_WIDTHS to generate the <source> element

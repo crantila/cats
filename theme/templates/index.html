@@ -14,7 +14,23 @@
                 </time>
             </header>
             <div class="am-panel-bd">
-                <img alt="A cutesaurus cat!" src="{{ SITEURL }}/images/{{ article.photo }}">
+                <picture>
+                    <source
+                        srcset="
+                            {% for width in IMAGE_WIDTHS %}
+                            {{ SITEURL }}/images/{{ article.photo|replace('.jpg', '') }}-{{ width }}.webp {{ width }}w,
+                            {% endfor %}"
+                        type="image/webp"
+                    >
+                    <source
+                        srcset="
+                            {% for width in IMAGE_WIDTHS %}
+                            {{ SITEURL }}/images/{{ article.photo|replace('.jpg', '') }}-{{ width }}.jpg {{ width }}w,
+                            {% endfor %}"
+                        type="image/jpeg"
+                    >
+                    <img alt="A cutesaurus cat!" src="{{ SITEURL }}/images/{{ article.photo }}">
+                </picture>
                 <p>{{ article.summary|striptags|escape }}</p>
             </div>
         </section>

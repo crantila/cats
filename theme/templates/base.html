@@ -8,11 +8,12 @@
     <meta name="renderer" content="webkit">
     {# Avoid extra ads from Baidu #}
     <meta http-equiv="Cache-Control" content="no-siteapp">
-    {# Somehow enables "responsive" stuff #}
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="{{ main_siteurl }}/static/css/opencolor.css">
-    <link rel="stylesheet" href="{{ main_siteurl }}/static/css/main.css">
+    <link rel="stylesheet" href="{{ main_siteurl }}/static/css/amazeui.flat.min.css">
+    <link rel="stylesheet" href="{{ main_siteurl }}/static/css/meow.css">
+    {# <link rel="stylesheet" href="{{ main_siteurl }}/static/css/opencolor.css"> #}
+    {# <link rel="stylesheet" href="{{ main_siteurl }}/static/css/main.css"> #}
 
     {% block css_extra %}{% endblock css_extra %}
     {% block head %}{% endblock head %}
@@ -30,11 +31,38 @@
 </head>
 
 <body>
-    {% include 'includes/base_header.html' %}
+    <header class="am-topbar am-topbar-fixed-top am-topbar-inverse">
+        <h1 class="am-topbar-brand">
+            <a href="{{ SITEURL }}">{{ SITENAME }}</a>
+        </h1>
+    </header>
 
-    <main>{% block content %}{% endblock %}</main>
+    {% block full_width_content %}
+    <main class="am-container">{% block content %}{% endblock %}</main>
+    {% endblock full_width_content %}
 
-    {% include 'includes/base_footer.html' %}
+    <footer class="am-navbar am-navbar-default am-cf">
+        <nav>
+            <ul class="am-navbar-nav am-cf am-avg-sm-4">
+                <li>
+                    <a href="{% block previous_link %}{% endblock %}">
+                        <span class="am-icon-arrow-left"></span>Previous
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="am-icon-heart"></span>Like
+                    </a>
+                </li>
+                <li><a href="{{ SITEURL }}"><span class="am-icon-home"></span>Home</a></li>
+                <li>
+                    <a href="{% block next_link %}{% endblock %}">
+                        <span class="am-icon-arrow-right"></span>Next
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
 
     {% block javascript %}{% endblock %}
 </body>

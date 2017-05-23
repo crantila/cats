@@ -24,12 +24,12 @@ AUTHOR_FEED_RSS = None
 # Change the URLs
 # ===============
 ARCHIVES_SAVE_AS = ''
-ARTICLES_SAVE_AS = ''
+ARTICLE_URL = '{date:%Y}/{date:%m}/{date:%d}/{date:%H}:{date:%M}'
+ARTICLE_SAVE_AS = '{url_root}/index.html'.format(url_root=ARTICLE_URL)
 AUTHORS_SAVE_AS = ''
 CATEGORIES_SAVE_AS = ''
 TAGS_SAVE_AS = ''
-PAGE_URL = '{slug}'
-PAGE_SAVE_AS = '{slug}/index.html'
+PAGE_SAVE_AS = ''
 
 
 # Theme (Pelican Settings)

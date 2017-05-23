@@ -53,6 +53,9 @@ body > footer {
 main {
     flex-grow: 1;
 }
+main > picture > * {
+    max-width: 95vw;
+}
 
 
 /* at the bottom of the app */

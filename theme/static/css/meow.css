@@ -1,0 +1,19 @@
+/* for the fixed topbar and navbar */
+body {
+    padding-bottom: 49px;
+    padding-top: 51px;
+}
+
+/* add hover/focus to navbar at bottom of page */
+.am-navbar-nav li:hover, .am-navbar-nav li:focus {
+    background-color: #0b76ac;
+}
+
+/* make sure the images aren't too wide */
+.am-panel-bd img {
+    max-width: 100%;
+}
+
+main {
+    margin-top: 1rem;
+}

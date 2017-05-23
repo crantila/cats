@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% block article_list %}
+    {% if articles %}
+    {% for article in articles_page.object_list %}
+        <section class="am-panel am-panel-default">
+            <header class="am-panel-hd">
+                Taken on
+                <time datetime="{{ article.date.strftime('%Y-%m-%dT%H:%M:%S%z') }}">
+                    {{ article.date.strftime('%d %B %Y') }}
+                    at
+                    {{ article.date.strftime('%H:%M') }}.
+                </time>
+            </header>
+            <div class="am-panel-bd">
+                <img alt="A cutesaurus cat!" src="{{ SITEURL }}/images/{{ article.photo }}">
+                <p>{{ article.summary|striptags|escape }}</p>
+            </div>
+        </section>
+    {% endfor %}
+    {% endif %}
+{% endblock article_list %}
+{% endblock content %}
+
+
+{% block previous_link %}
+{%- if articles_previous_page.number is defined -%}
+{{ SITEURL }}/{{ page_name }}{{ articles_previous_page.number }}.html
+{%- else -%}
+#
+{%- endif -%}
+{% endblock %}
+
+{% block next_link %}
+{%- if articles_next_page.number is defined -%}
+{{ SITEURL }}/{{ page_name }}{{ articles_next_page.number }}.html
+{%- else -%}
+#
+{%- endif -%}
+{% endblock %}

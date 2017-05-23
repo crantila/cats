@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- source path: {{ article.source_path }} -->
+{{ article.date }}
+<picture>
+    <img alt="A cutesaurus cat!" src="{{ SITEURL }}/images/{{ article.photo }}">
+</picture>
+{{ article.content }}
+{% endblock content %}

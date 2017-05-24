@@ -12,6 +12,8 @@ DEFAULT_LANG = 'en'
 DEFAULT_PAGINATION = 10
 SLUGIFY_SOURCE = 'basename'
 
+PLUGINS = ['plugins.api_generator']
+
 
 # Pagination Settings
 # ===================
@@ -57,3 +59,6 @@ TYPOGRIFY = True
 THEME = 'theme'
 DIRECT_TEMPLATES = ['compress_images', 'index']
 # IMAGE_WIDTHS... only defined in publishconf
+IMAGES_URL = '{siteurl}/images'.format(siteurl=SITEURL)
+# NOTE: API_URL must start but not end with /
+API_URL = '/api/v1'  # TODO: choose one

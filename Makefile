@@ -76,6 +76,7 @@ images:
 
 _the-publish-thing:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
+	node_modules/.bin/workbox-cli generate:sw
 
 publish: _the-publish-thing images
 

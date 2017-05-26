@@ -10,10 +10,8 @@
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="{{ main_siteurl }}/static/css/amazeui.flat.min.css">
-    <link rel="stylesheet" href="{{ main_siteurl }}/static/css/meow.css">
-    {# <link rel="stylesheet" href="{{ main_siteurl }}/static/css/opencolor.css"> #}
-    {# <link rel="stylesheet" href="{{ main_siteurl }}/static/css/main.css"> #}
+    <link rel="stylesheet" href="{{ SITEURL }}/static/css/amazeui.flat.min.css">
+    <link rel="stylesheet" href="{{ SITEURL }}/static/css/meow.css">
 
     {% block css_extra %}{% endblock css_extra %}
     {% block head %}{% endblock head %}
@@ -65,5 +63,17 @@
     </footer>
 
     {% block javascript %}{% endblock %}
+    {% block serviceworker %}
+    {% if PUBLISH %}
+        <script>
+            window.addEventListener('load', function() {
+                if (navigator.serviceWorker) {
+                    navigator.serviceWorker.register('{{ SITEURL }}/sw.js')
+                        .catch(() => { /* NO-OP */ });
+                }
+            });
+        </script>
+    {% endif %}
+    {% endblock %}
 </body>
 </html>

@@ -10,6 +10,8 @@ import sys
 sys.path.append(os.curdir)
 from pelicanconf import *
 
+PUBLISH = True
+
 SITEURL = 'https://meow.antila.ca'
 RELATIVE_URLS = False
 DELETE_OUTPUT_DIRECTORY = True

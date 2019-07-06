@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 {% for article in articles %}
 {% if article.photo %}

@@ -50,14 +50,15 @@ PAGE_SAVE_AS = ''
 # ========================
 THEME_STATIC_DIR = 'static'
 TYPOGRIFY = True
-# TEMPLATE_PAGES = {
-# }
 
 
 # Theme (Custom Settings)
 # =======================
 THEME = 'theme'
-DIRECT_TEMPLATES = ['compress_images', 'index']
+DIRECT_TEMPLATES = ['index']
+TEMPLATE_PAGES = {
+    'compress_images.sh': 'compress_images.sh',
+}
 # IMAGE_WIDTHS... only defined in publishconf
 IMAGES_URL = '{siteurl}/images'.format(siteurl=SITEURL)
 # NOTE: API_URL must start but not end with /
